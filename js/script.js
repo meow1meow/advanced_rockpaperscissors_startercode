@@ -1,3 +1,4 @@
+/* global $ */
 //Class 1:
         // Fork and clone the repo and set up your project workspace and link files
         // Write HTML for your project
@@ -19,6 +20,56 @@
 //****************** SERIOUSLY TEST USING console.log()!!! ******************
 
 //GLOBAL VARIABLES
+
+var userChoice;
+var computerChoice;
+var winner;
+var choice = ["rock","paper","scissors"];
+
+$(document).ready(function(){ 
+   $("#button").click(function(){
+   userChoice= $("#input").val();
+   $("#user-choice").html(userChoice);
+
+
+
+ var num = Math.floor(Math.random()*3);
+ computerChoice = choice[num]
+  $("#computer-choice").html(computerChoice);
+if (userChoice === computerChoice){
+        console.log("tie");
+        $("#winner").html("tie")
+}else if (userChoice ==="rock" &&
+computerChoice ==='paper'){
+        console.log("computer wins!");
+        $("#winner").html("computer wins!")
+}else if (userChoice ==="rock" && 
+computerChoice === "scissors"){
+        console.log("user wins!")
+        $("#winner").html("user wins")
+}else if (userChoice ==="paper" &&
+computerChoice ==="rock"){
+        console.log("user wins!")
+        $("#winner").html("user wins")
+}else if (userChoice ==="paper" &&
+computerChoice ==="scissors"){
+        console.log("computer wins!")
+        $("#winner").html("computer wins")
+}else if (userChoice ==="scissors" &&
+computerChoice ==="rock"){
+        console.log("comuter wins!")
+}else if (userChoice ==="scissors" &&
+computerChoice ==="paper"){
+        console.log("user wins!")
+        $("#winner").html("user wins")
+} else {
+        console.log("no winner")
+}
+});
+});     
+
+
+
 
 
 
